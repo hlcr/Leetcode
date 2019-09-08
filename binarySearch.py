@@ -1,18 +1,17 @@
 def findLowerBound(target, nums):
     if not nums:
         return -1
-    lb = -1
-    ub = len(nums)
-    while lb + 1 < ub:
-        mid = lb + (ub - lb) // 2
+    bottom = -1
+    up = len(nums)
+    while bottom + 1 < up:
+        mid = bottom + (up - bottom) // 2
         if nums[mid] < target:
-            lb = mid
+            bottom = mid
         else:
-            ub = mid
-    return lb + 1
-
+            up = mid
+    return bottom + 1
 
 if __name__ == '__main__':
-    sortedArray = [1, 2, 2, 3, 4, 6, 6, 6, 13, 18]
-    r = findLowerBound(19, sortedArray)
+    sortedArray = [0,1]
+    r = findLowerBound(1, sortedArray)
     print(r)
