@@ -6,35 +6,6 @@ class TreeNode:
         self.right = None
 
 class Solution:
-    #     def compare(self, a, b):
-    #         if not a and not b:
-    #             return True
-
-    #         if (a and not b) or (not a and b) or (a.val != b.val):
-    #             return False
-
-    #         return self.compare(a.left, b.left) and self.compare(a.right, b.right)
-
-    #     def helper(self, s, value):
-    #         if not s:
-    #             return
-    #         if s.val == value:
-    #             self.r_list.append(s)
-    #         ls =  self.helper(s.left, value)
-    #         rs = self.helper(s.right, value)
-
-    #     def isSubtree(self, s: TreeNode, t: TreeNode) -> bool:
-    #         if not s or not t:
-    #             return False
-    #         self.r_list = []
-    #         self.helper(s, t.val)
-
-    #         if not self.r_list:
-    #             return False
-    #         for k in self.r_list:
-    #             if self.compare(k, t):
-    #                 return True
-    #         return False
     def isSubtree(self, s: TreeNode, t: TreeNode) -> bool:
         if not s or not t:
             return False
