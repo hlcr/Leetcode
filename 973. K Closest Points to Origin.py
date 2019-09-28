@@ -9,7 +9,7 @@ class Solution(object):
         class myHeap:
             def __init__(self, data):
 
-                self._data = [(self.fn(d), d) for d in data]
+                self._data = [[self.fn(d), d] for d in data]
                 heapq.heapify(self._data)
 
             def fn(self, d):
@@ -19,7 +19,7 @@ class Solution(object):
                 return heapq.heappop(self._data)[1]
 
             def push(self, data):
-                heapq.heappush(self._data, (self.fn(data), data))
+                heapq.heappush(self._data, [self.fn(data), data])
 
         if len(points) <= K:
             return points
@@ -33,6 +33,8 @@ class Solution(object):
 if __name__ == '__main__':
     data = [[3,3],[5,-1],[-2,4]]
     K = 2
-    # r = Solution().kClosest(data, K)
-    data.sort(key=lambda x: x[0]*x[0] + x[1]*x[1])
+    r = Solution().kClosest(data, K)
+    print(r)
+    # data.sort(key=lambda x: x[0]*x[0] + x[1]*x[1])
     print(data[:K])
+    print(sorted([[1,2,3],[1,1,1],[2,1,1]]))
